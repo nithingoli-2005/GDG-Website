@@ -45,12 +45,26 @@ const Navbar = () => {
           >
             About
           </NavLink>
-          <button className="text-gray-200 hover:text-white transition font-medium text-base px-4 py-2">
+          <NavLink
+            to="/events"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-white text-[#0D0D0D] px-4 py-2 rounded-full font-medium"
+                : "text-gray-200 hover:text-white transition font-medium text-base px-4 py-2"
+            }
+          >
             Events
-          </button>
-          <button className="text-gray-200 hover:text-white transition font-medium text-base px-4 py-2">
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-white text-[#0D0D0D] px-4 py-2 rounded-full font-medium"
+                : "text-gray-200 hover:text-white transition font-medium text-base px-4 py-2"
+            }
+          >
             Contact
-          </button>
+          </NavLink>
         </nav>
 
         {/* Mobile Toggle Button */}
@@ -85,12 +99,28 @@ const Navbar = () => {
           >
             About
           </NavLink>
-          <button className="block w-full text-gray-200 hover:text-white font-medium py-2">
+          <NavLink
+            to="/events"
+            onClick={() => setOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "block w-full bg-white text-[#0D0D0D] font-medium py-2 rounded"
+                : "block w-full text-gray-200 hover:text-white font-medium py-2"
+            }
+          >
             Events
-          </button>
-          <button className="block w-full text-gray-200 hover:text-white font-medium py-2">
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "block w-full bg-white text-[#0D0D0D] font-medium py-2 rounded"
+                : "block w-full text-gray-200 hover:text-white font-medium py-2"
+            }
+          >
             Contact
-          </button>
+          </NavLink>
         </div>
       )}
     </header>
